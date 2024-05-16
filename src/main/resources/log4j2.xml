@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+<Appenders>
+    <!-- File Appender for the original file -->
+    <File name="FileAppender" fileName="src/main/java/com/sd/server/storage/logs/server-log.log" immediateFlush="true" append="true">
+        <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </File>
+    <!-- Another File Appender for the new file -->
+    <File name="AnotherFileAppender" fileName="src/main/java/com/sd/server/storage/logs/package-log.log" immediateFlush="true" append="true">
+        <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </File>
+    <File name="HibernateFileAppender" fileName="src/main/java/com/sd/server/storage/logs/hibernate-log.log" immediateFlush="true" append="true">
+        <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </File>
+</Appenders>
+
+<Loggers>
+    <!-- Logger for the original file -->
+    <Logger name="com.sd.server" level="debug">
+        <AppenderRef ref="FileAppender"/>
+    </Logger>
+
+    <!-- Logger for the new file -->
+    <Logger name="com.sd.server" level="info">
+        <AppenderRef ref="AnotherFileAppender"/>
+    </Logger>
+
+    <Logger name="org.hibernate" level="info" additivity="false">
+        <AppenderRef ref="HibernateFileAppender"/>
+    </Logger>
+
+</Loggers>
+</Configuration>
