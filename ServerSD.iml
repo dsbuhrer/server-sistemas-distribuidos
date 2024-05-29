@@ -4,10 +4,18 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="a2bf8946-3d48-49b5-bd58-54818219f73e" />
+          <unit-entry name="hibernate.cfg.xml" value="82f1d39a-03ec-4bae-9840-a0ab83ddc6c1" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
+      </configuration>
+    </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <datasource-mapping />
+        <naming-strategy-map />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META_INF/persistence.xml" />
       </configuration>
     </facet>
   </component>
